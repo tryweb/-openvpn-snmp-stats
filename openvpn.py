@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 #
-# Name: Openvpn Script
-# Author: Thierry Diaz <thierry.diaz@gmail.com>
+# Author: https://github.com/ThierryDi
 # Version: 1.0
 # Description: This is a simple script heavily inspired by librenms's wireguard.py data collection script via SNMP
 #              https://github.com/librenms/librenms-agent/blob/master/snmp/wireguard.py
