@@ -30,7 +30,8 @@
 import json, sys, os, pickle
 from datetime import datetime
 
-LOG_FILE = "/var/log/openvpn/openvpn-status.log"
+#LOG_FILE = "/var/log/openvpn/openvpn-status.log"
+LOG_FILE = "/root/Dockovpn/openvpn-status.log"
 DB_FOLDER = "db"
 INTERFACE = "tun0"
 
@@ -143,7 +144,8 @@ def log_parser(file):
         error_handler("Command Output Parsing Error", err)
 
     # Calculate minutes since last handshake here datetime.now() - datetime.strptime(timestamp,'%a %b %d %H:%M:%S %Y')
-    last_handshake_timestamp = datetime.strptime(timestamp,'%a %b %d %H:%M:%S %Y') if timestamp else 0
+    #last_handshake_timestamp = datetime.strptime(timestamp,'%a %b %d %H:%M:%S %Y') if timestamp else 0
+    last_handshake_timestamp = datetime.strptime(timestamp,'%Y-%m-%d %H:%M:%S') if timestamp else 0
     minutes_since_last_handshake = (
         int((datetime.now() - last_handshake_timestamp).total_seconds() / 60)
         if last_handshake_timestamp
